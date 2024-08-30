@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/header/Header.jsx";
 import Input from "./components/input/Input.jsx";
 import Totalcount from "./components/totalCount/Totalcount.jsx";
-import List from "./components/list/List.jsx";
+import Lists from "./components/lists/Lists.jsx";
 import { useState } from "react";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
                 setList={setList}
             />
             <Totalcount count={list.length} />
-            <List list={list} setList={setList} />
+            <Lists list={list} setList={setList} />
         </div>
     );
 }

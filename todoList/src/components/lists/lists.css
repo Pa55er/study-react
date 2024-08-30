@@ -1,9 +1,9 @@
-.List {
+.Lists {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.List li {
+.Lists li {
     padding: 2rem;
     display: flex;
     justify-content: space-between;
@@ -11,10 +11,10 @@
     border-radius: 0.5rem;
     background-color: #262626;
 }
-.List li span {
+.Lists li span {
     color: white;
 }
-.List li i {
+.Lists li i {
     color: #808080;
 }
 .NoList {
