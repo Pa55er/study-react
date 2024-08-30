@@ -1,0 +1,43 @@
+#root {
+    border: 1px solid red;
+}
+.title {
+    border-bottom: 1px solid #333;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+.listCon {
+    padding: 1rem;
+}
+.listCon > li {
+    border-bottom: 1px dotted #999;
+    padding: 1rem 0;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal ._inner {
+    max-width: 350px;
+    width: 50%;
+    padding: 2rem;
+    background-color: white;
+    position: relative;
+}
+
+.modal button {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+}

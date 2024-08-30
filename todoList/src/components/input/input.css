@@ -1,0 +1,24 @@
+.Input {
+    display: flex;
+    gap: 1rem;
+}
+.Input .InputBtn {
+    width: 87px;
+    height: 52px;
+    background-color: #1e6f9f;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+.Input #textInput {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: #262626;
+    color: white;
+}

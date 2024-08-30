@@ -1,0 +1,15 @@
+.Totalcount {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+}
+.Totalcount span {
+    color: #8284fa;
+    font-size: 14px;
+}
+.Totalcount .count {
+    color: blue;
+    background-color: #cccccc;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+}

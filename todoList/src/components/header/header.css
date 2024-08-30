@@ -1,0 +1,19 @@
+.Header {
+    font-size: 40px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.Header i {
+    color: #5e60ce;
+    font-size: 30px;
+}
+.Header span {
+    font-weight: bold;
+}
+.Header span.front {
+    color: #3ab1f6;
+}
+.Header span.back {
+    color: #1e6f9f;
+}
