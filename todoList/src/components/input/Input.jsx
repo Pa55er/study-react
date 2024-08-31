@@ -1,6 +1,9 @@
+import { useRef } from "react";
 import "./input.css";
 
 export default function Input({ text, list, setText, setList }) {
+    const inputRef = useRef();
+
     return (
         <div className="Input">
             <input
@@ -8,6 +11,7 @@ export default function Input({ text, list, setText, setList }) {
                 type="text"
                 placeholder="가고 싶은 여행지를 등록하세요"
                 value={text}
+                ref={inputRef}
                 onChange={(e) => {
                     setText(e.target.value);
                 }}
@@ -24,13 +28,12 @@ export default function Input({ text, list, setText, setList }) {
             <div
                 className="InputBtn"
                 onClick={() => {
-                    const target = document.getElementById("textInput");
                     if (text === "") {
                         alert("입력 내용이 없습니다.");
                     } else {
                         setList([...list, text]);
                         setText("");
-                        target.focus();
+                        inputRef.current.focus();
                     }
                 }}
             >
