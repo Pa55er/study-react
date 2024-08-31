@@ -1,5 +1,5 @@
 import "./assets/myreset.css";
-import "./App.css";
+import "./assets/App.css";
 import Header from "./components/header/Header.jsx";
 import Input from "./components/input/Input.jsx";
 import Totalcount from "./components/totalCount/Totalcount.jsx";
