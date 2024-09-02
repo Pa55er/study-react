@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import "./input.css";
 
-export default function Input({ text, list, setText, setList }) {
+export default function Input({ list, setList }) {
+    let [text, setText] = useState("");
     const inputRef = useRef();
 
     return (

@@ -7,18 +7,12 @@ import Lists from "./components/lists/Lists.jsx";
 import { useState } from "react";
 
 function App() {
-    let [text, setText] = useState("");
     let [list, setList] = useState([]);
 
     return (
         <div className="App">
             <Header />
-            <Input
-                text={text}
-                list={list}
-                setText={setText}
-                setList={setList}
-            />
+            <Input list={list} setList={setList} />
             <Totalcount count={list.length} />
             <Lists list={list} setList={setList} />
         </div>
