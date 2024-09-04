@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+
+.main {
+	max-width: 1000px;
+	width: calc(80% - 20px);
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	align-items: flex-start;
+}
+.main h1 {
+	width: 100%;
+	text-align: center;
+	padding: 80px 0 1rem;
+}
+.inputCon {
+	width: 40%;
+	min-width: 350px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 1.5rem;
+	border: 1px solid #ccc;
+	border-radius: 1rem;
+}
+.error {
+	width: 100%;
+	font-size: 0.7rem;
+	color: tomato;
+	text-align: right;
+}
+.inputCon label {
+	width: 100px;
+}
+
+.inputCon input,
+.inputCon select,
+.inputCon textarea {
+	width: calc(100% - 100px - 0.5rem);
+	padding: 0.5rem;
+}
+#group {
+	width: calc(100% - 200px - 1rem);
+}
+.btnAddGroup {
+	flex: 1;
+}
+.btnSave {
+	width: 100%;
+	padding: 0.5rem;
+}
+
+.listArea {
+	flex: 1;
+}
+.searchCon {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.searchCon > div {
+	background-color: aliceblue;
+	border-radius: 1rem;
+	flex: 1;
+}
+.searchCon input {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 1rem;
+	width: 100%;
+}
+.btnViewAll {
+	background-color: #007bff;
+	color: white;
+	padding: 1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 1rem;
+}
+
+.listCon {
+	margin-top: 2rem;
+}
+.listCon > li {
+	border-bottom: 1px dotted #ccc;
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}
+.listCon > li > p {
+	flex: 1;
+	display: flex;
+	gap: 0.5rem;
+}
+.listCon button {
+	padding: 0.5rem;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-content {
+	background-color: white;
+	padding: 30px;
+	border-radius: 5px;
+	position: relative;
+}
+.modal-content h2 {
+	text-align: center;
+	padding-bottom: 1rem;
+}
+.modal-content .btnClose {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: tomato;
+	color: white;
+	border: none;
+	outline: none;
+	padding: 0.5rem;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.modal-content li {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 0;
+}
+.modal-content .btnGroupDelete {
+	padding: 0.5rem;
+	background-color: transparent;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+}
+.modal-content > div {
+	padding-top: 0.5rem;
+	display: flex;
+}
+.modal-content > div > * {
+	padding: 0.5rem;
+}
+.modal-content > p {
+	padding: 0.5rem;
+}
+
+@media (max-width: 900px) {
+	.main {
+		width: calc(90% - 20px);
+		display: block;
+	}
+	.inputCon {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+	.listArea {
+		width: 100%;
+	}
+}

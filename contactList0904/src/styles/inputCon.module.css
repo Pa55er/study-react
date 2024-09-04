@@ -1,0 +1,32 @@
+.inputCon {
+    border: 1px solid #999;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.inputCon > * {
+    border: 1px solid tomato;
+}
+.inputCon label {
+    width: 90px;
+}
+.inputCon input {
+    width: calc(100% - 90px - 1rem);
+    padding: 0.5rem;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.inputCon select {
+    width: calc(100% - 90px - 2rem - 80px);
+}
+.inputCon button {
+    width: 80px;
+}
+.btn {
+    background-color: antiquewhite;
+    flex: 1;
+    padding: 1rem;
+    border-radius: 10px;
+}

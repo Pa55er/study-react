@@ -1,0 +1,102 @@
+.main {
+    /* border: 1px solid #000; */
+    max-width: 1000px;
+    width: calc(100% - 3rem);
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.main > * {
+    /* border: 1px solid tomato; */
+}
+.main h1 {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0 20px;
+}
+.main > form {
+    width: 40%;
+    min-width: 350px;
+}
+.main > section {
+    flex: 1;
+}
+
+@media (max-width: 800px) {
+    .main > form,
+    .main > section {
+        width: 100%;
+    }
+}
+
+/* SearchCon */
+.SearchCon {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.SearchCon > * {
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.SearchCon input {
+    flex: 1;
+    background-color: antiquewhite;
+}
+.SearchCon button {
+    cursor: pointer;
+}
+
+/* List */
+.list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    padding: 1rem;
+}
+.list p {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+.list span {
+}
+.list button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* modalOverlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalContent {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative;
+}
+.modalContent button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
