@@ -1,0 +1,70 @@
+.Header {
+    border: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logoImg {
+    width: 200px;
+}
+
+.Header > nav,
+.gnb,
+.person {
+    display: flex;
+    gap: 1rem;
+}
+
+.Header a {
+    transition: 0.3s;
+    font-weight: bold;
+    color: #333;
+}
+
+.Header a:hover {
+    color: goldenrod;
+}
+
+.btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .Header > nav {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .on {
+        display: block !important;
+    }
+
+    .Header > nav > div {
+        justify-content: center;
+        padding: 2rem;
+        /* border: 1px solid blue; */
+    }
+
+    .gnb {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .btn {
+        display: block;
+    }
+}

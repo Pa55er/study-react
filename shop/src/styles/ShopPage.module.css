@@ -1,0 +1,55 @@
+.ShopPage {
+    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ShopPage h2 {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+.ShopPage nav {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ShopPage nav button {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.ShopPage nav button:hover {
+    background-color: goldenrod;
+}
+
+.listCon {
+    width: calc(100% - 150px - 2rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    border: 1px solid red;
+}
+
+@media (max-width: 800px) {
+    .ShopPage {
+        flex-direction: column;
+    }
+    .ShopPage nav {
+        width: 100%;
+        flex-direction: row;
+    }
+    .ShopPage nav button {
+        flex: 1;
+    }
+    .listCon {
+        width: 100%;
+    }
+}

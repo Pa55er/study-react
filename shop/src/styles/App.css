@@ -1,0 +1,10 @@
+.warp {
+    overflow: hidden;
+}
+
+.mw {
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border: 1px solid red;
+}
