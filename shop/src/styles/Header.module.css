@@ -1,5 +1,5 @@
 .Header {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     position: relative;
     display: flex;
     justify-content: space-between;

@@ -1,17 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "../styles/Header.module.css";
 import { useEffect, useState } from "react";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+    const location = useLocation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     useEffect(() => {
-        if (isMobile) {
+        setIsMenuOpen(false);
+    }, [location]);
+
+    useEffect(() => {
+        if (isMobile && isMenuOpen) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "visible";

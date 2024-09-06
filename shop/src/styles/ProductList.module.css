@@ -1,5 +1,5 @@
 .ProductList {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -17,8 +17,8 @@
 }
 
 .ProductList > * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .ProductList > * > * {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }

@@ -1,9 +1,10 @@
 .ListCard > div {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
     padding: 0.5rem;
+    cursor: pointer;
 }
 
 .cardImg {
@@ -17,7 +18,10 @@
     object-fit: cover;
 }
 
-.cardInfo {
+.cardInfo > p:nth-of-type(1) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .discount {
