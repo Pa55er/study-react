@@ -1,59 +1,65 @@
+import style from "../css/Similar.module.css";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import style from "../styles/Similar.module.css";
+import { useEffect, useRef, useState, useCallback } from "react";
 import ListCard from "../components/ListCard";
 
 export default function Similar({ info }) {
-    const [similarList, setSimilarList] = useState([]);
+	const [similerList, setSimilerList] = useState([]);
+	const prevInfo = useRef(); // 이전값 저장
 
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
+	const getproductsSim = useCallback(async () => {
+		if (prevInfo.current === info) return;
+		try {
+			let url = `http://localhost:8000/products?category=${info}`;
+			let res = await fetch(url);
+			let data = await res.json();
+			// console.log(data);
+			setSimilerList(data);
+		} catch (error) {
+			console.log(error);
+		}
 
-    const getProductsSim = useCallback(async () => {
-        try {
-            const url = `http://localhost:8000/products?category=${info}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            setSimilarList(data);
-        } catch (error) {
-            console.error(error);
-        }
-    }, [info]);
+		prevInfo.current = info;
+	}, [info]); // 의존성 배열 추가
 
-    useEffect(() => {
-        getProductsSim();
-    }, [getProductsSim]);
+	useEffect(() => {
+		getproductsSim();
+	}, [getproductsSim, info]);
 
-    return (
-        <div>
-            <Swiper
-                slidesPerView={4}
-                navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
-                }}
-                onBeforeInit={(swiper) => {
-                    swiper.params.navigation.prevEl = prevRef.current;
-                    swiper.params.navigation.nextEl = nextRef.current;
-                }}
-                spaceBetween={16}
-                pagination={{ clickable: true }}
-                modules={[Navigation, Pagination]}
-                className={style.bannerList}
-            >
-                {similarList.map((item) => (
-                    <SwiperSlide key={item.id}>
-                        <ListCard item={item} />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-            <button ref={prevRef} className={style.btnPrev}>
-                이전
-            </button>
-            <button ref={nextRef} className={style.btnNext}>
-                다음
-            </button>
-        </div>
-    );
+	const prevRef = useRef(null);
+	const nextRef = useRef(null);
+	return (
+		<div>
+			<Swiper
+				slidesPerView={4}
+				navigation={{
+					prevEl: prevRef.current,
+					nextEl: nextRef.current,
+				}}
+				onBeforeInit={(swiper) => {
+					swiper.params.navigation.prevEl = prevRef.current;
+					swiper.params.navigation.nextEl = nextRef.current;
+				}}
+				spaceBetween={16}
+				pagination={{
+					clickable: true,
+				}}
+				modules={[Navigation, Pagination]}
+				className={style.bannerList}
+			>
+				{similerList.map((item) => (
+					<SwiperSlide key={item.id}>
+						<ListCard item={item} />
+					</SwiperSlide>
+				))}
+			</Swiper>
+			<button ref={prevRef} className={style.btnPrev}>
+				이전{" "}
+			</button>
+			<button ref={nextRef} className={style.btnNext}>
+				다음
+			</button>
+		</div>
+	);
 }
