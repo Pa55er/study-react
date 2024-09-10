@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+nav a {
+    background-color: aliceblue;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
